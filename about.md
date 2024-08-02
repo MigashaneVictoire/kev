@@ -29,6 +29,14 @@ When CISA adds a vulnerability to the KEV catalog, it typically includes clear a
 - Remove affected products from agency networks if they have reached end-of-life or cannot be otherwise updated.
 CISA also encourages all other organizations to follow these remediation steps to improve their overall security.
 
-**The Goal of the KEV Project**
+## The Goal of the KEV Project
+
+ **Vulnerability Risk Scoring Model**
+
+Goal: Develop a predictive model that scores vulnerabilities based on their likelihood of being exploited or used in ransomware campaigns.
+
+Hypothesis: Features like vendorProject, product, vulnerabilityName, cwes, and knownRansomwareCampaignUse Are good predictors of volnerability risk levels. 
+
+Modeling Techniques: Use classification model to predicts the risk level of each vulnerability with Logistic Regression, Random Forest, or Gradient Boosting.
 
 For more impormation, visit the [America's Cyber Defence Agency](https://www.cisa.gov/known-exploited-vulnerabilities)
