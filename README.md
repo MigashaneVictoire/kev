@@ -31,12 +31,16 @@ CISA also encourages all other organizations to follow these remediation steps t
 
 ## The Goal of the KEV Project
 
- **Vulnerability Risk Scoring Model**
+**Binary Classification Model**:
 
-Goal: Develop a predictive model that scores vulnerabilities based on their likelihood of being exploited or used in ransomware campaigns.
+**Goal**: Predict whether a vulnerability is associated with a known ransomware campaign.
+- **Approach**: Use features such as `cveID`, `vendorProject`, `product`, `vulnerabilityName`, `shortDescription`, and `dateAdded` to build a binary classification model to classify vulnerabilities as `known` or `unknown` for ransomware campaigns.
 
-Hypothesis: Features like vendorProject, product, vulnerabilityName, cwes, and knownRansomwareCampaignUse Are good predictors of volnerability risk levels. 
-
-Modeling Techniques: Use classification model to predicts the risk level of each vulnerability with Logistic Regression, Random Forest, or Gradient Boosting.
+- Questions of focus:
+    - 1.  Is there a significant association between the vendorProject and the likelihood of a vulnerability being associated with a ransomware campaign?
+    - 2. Does the specific vulnerability type significantly influence the classification of a vulnerability as associated with a known ransomware campaign?
+    - 3.Question: Does the dateAdded (or the age of the vulnerability) significantly affect the likelihood of being associated with a ransomware campaign?
+    - 4. Are certain products more likely to be associated with vulnerabilities targeted by ransomware campaigns?
+    - 5. Is there a significant difference in the likelihood of ransomware association among different types of vulnerabilities?
 
 For more impormation, visit the [America's Cyber Defence Agency](https://www.cisa.gov/known-exploited-vulnerabilities)
