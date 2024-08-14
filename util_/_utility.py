@@ -299,3 +299,19 @@ def save_visuals(fig: plt.figure ,viz_name:str= "unamed_viz", folder_name:int= 0
             fig.canvas.print_figure(file_path)
     
     return f"Visual successfully saved in folder: {folder_name}"
+
+################### SAVING VISUALS ##############################################
+def compare_pvalue_to_alpha(p_value:float, alpha:float = 0.05) -> (float, float):
+    """
+    parameters:
+        p_value: floating number from a hypotheis testing fuction.
+        alpha: confidence leve value represed as a percentage.
+     return:
+         string declaring the result of the comparizon between the p_value and the alpha value.
+    """
+    if p_value < alpha:
+        print("(p_value < alpha) --> We have enough evidence to reject the null hypothesis!")
+    else:
+        print("(p_value => alpha) --> we fail to reject the null hypothesis at this time!")
+        
+        
