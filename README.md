@@ -44,3 +44,13 @@ CISA also encourages all other organizations to follow these remediation steps t
     - 5. Is there a significant difference in the likelihood of ransomware association among different types of vulnerabilities?
 
 For more impormation, visit the [America's Cyber Defence Agency](https://www.cisa.gov/known-exploited-vulnerabilities)
+
+
+## Project Outcome and Conclusion:
+
+The KEV project used five models to predict if a vulnerability is linked to a ransomware campaign. The K-Nearest Neighbor (KNN) model performed the best, showing consistent results in both training and validation. However, despite its performance, the improvement in accuracy was minimal (1.8% accuracy improvement). Given the critical nature of the work being done, I do not recommend relying on this model for such high-stakes decision-making.
+
+The project found that things like the vendor, vulnerability type, product, and when the vulnerability was added can help predict if it will be exploited in ransomware attacks. This suggests that CISA's current efforts are working well, but there's still potential to improve how we manage vulnerabilities using data.
+
+**Future Plan**
+- Time Series Analysis: Study how the age of vulnerabilities impacts their link to ransomware over time, which could help predict future patterns.
