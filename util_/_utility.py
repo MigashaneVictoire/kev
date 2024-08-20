@@ -26,6 +26,7 @@ from sklearn.preprocessing import MinMaxScaler
 # system manipulation
 import os
 import sys
+from PIL import Image # load images
 
 # other
 # import env
@@ -135,6 +136,27 @@ def save_visuals_(fig: plt.figure ,viz_name:str= "unamed_viz", folder_name:int= 
     
     return f"Visual successfully saved in folder: {folder_name}"
 
+# -----------------------------------------------------------------
+def load_png_from_dir(filename:str,directory: str = "./00_project_visuals"):
+    """
+    Goal: Function will load images from a image directory
+    Parameters:
+        - directory: Directory to the images
+        - filename: Name of image looking to load
+    Returns:
+        - Displays the image using matplotlib
+    """
+    # Construct the full file path
+    file_path = os.path.join(directory, filename)
+
+    # Load the image
+    image = Image.open(file_path)
+
+    # Display the image
+    plt.imshow(image)
+    plt.axis('off')
+    plt.show()
+    
 # -----------------------------------------------------------------
 # Save the splited data into separate csv files
 def save_split_data_(original_df:pd.DataFrame,encoded_scaled_df: pd.DataFrame, train:pd.DataFrame, validate:pd.DataFrame, test:pd.DataFrame, folder_path: str = "./00_project_data",
